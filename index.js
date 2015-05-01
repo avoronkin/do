@@ -1,9 +1,7 @@
-var Server = require('lib/server');
-var App = require('lib/app');
-var Router = require('lib/router');
+var router = require('./lib/router.js');
+var server = require('./lib/server.js');
 
 module.exports = {
-  Router: Router,
-  App: App,
-  Server: Server
+  router: router,
+  server: server
 };
