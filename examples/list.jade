@@ -1,0 +1,10 @@
+doctype html
+html
+  head
+    title examples
+  body
+    h1 Examples
+    ul
+      for name in examples
+        li
+          a(href='/#{name}')= name
