@@ -27,7 +27,7 @@ app.get('/:example', function(req, res) {
 app.get('/:example/main.js', function(req, res, next) {
   var name = req.params.example;
   var path = join(__dirname, name);
-  console.log('path', path);
+
   browserify(path + '/main.js')(req, res, next);
 });
 

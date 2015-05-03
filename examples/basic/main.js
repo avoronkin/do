@@ -25,8 +25,17 @@ router.use('/basic/test3', function(req, res, next) {
   console.log('route /basic/test3 works 2!');
 });
 
+router.use('/basic/error', function(req, res, next) {
+  console.log('route /basic/error works!');
+  next(new Error('some error'));
+});
+
 router.use(function(req, res, next) {
   console.log('url not found!!!');
+});
+
+router.use(function(err, req, res, next) {
+  console.log('ups!!! error handler works', err);
 });
 
 var server = new Server(router);
