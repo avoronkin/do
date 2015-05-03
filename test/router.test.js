@@ -82,4 +82,21 @@ describe('Router', function() {
 
   });
 
+  it('error middleware', function(done) {
+    var router = routerFactory();
+
+    router.get('/error', function(req, res, next) {
+      next(new Error('error in route'));
+    });
+
+    router.use(function(err, req, res, next) {
+      done();
+    });
+
+    router({
+      url: 'http://localhost/error'
+    }, {}, function() {});
+
+  });
+
 });
