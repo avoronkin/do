@@ -13,9 +13,7 @@ describe('Router', function() {
 
     router({
       url: 'any'
-    }, {
-
-    }, function() {});
+    }, {}, function() {});
 
   });
 
@@ -30,9 +28,7 @@ describe('Router', function() {
 
     router({
       url: 'any'
-    }, {
-
-    }, function() {});
+    }, {}, function() {});
 
   });
 
@@ -58,9 +54,7 @@ describe('Router', function() {
 
     router({
       url: 'http://localhost/test2'
-    }, {
-
-    }, function() {});
+    }, {}, function() {});
 
   });
 
@@ -76,9 +70,7 @@ describe('Router', function() {
 
     router({
       url: 'http://localhost/test11/test22'
-    }, {
-
-    }, function() {});
+    }, {}, function() {});
 
   });
 
