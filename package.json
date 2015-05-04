@@ -12,7 +12,8 @@
     "browserify-middleware": "^5.0.2",
     "chai": "^2.2.0",
     "express": "^4.12.3",
-    "jade": "^1.9.2"
+    "jade": "^1.9.2",
+    "mocha": "^2.2.4"
   },
   "dependencies": {
     "debug": "^2.1.1",
