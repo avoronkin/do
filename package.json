@@ -21,6 +21,6 @@
     "merge-descriptors": "^1.0.0",
     "path-to-regexp": "^1.0.3",
     "url-parse": "^1.0.0",
-    "ware": "^1.2.0"
+    "ware": "git://github.com/avoronkin/ware.git"
   }
 }
