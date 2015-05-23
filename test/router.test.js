@@ -100,22 +100,23 @@ describe('Router', function() {
       spy3.called.should.be.false;
     });
 
+    it('can mount another router', function(done) {
+      var router = routerFactory();
+      var router2 = routerFactory();
+      var router3 = routerFactory();
 
-    // it('can mount another router', function(done) {
-    //   var router = routerFactory();
-    //   var router2 = routerFactory();
-    //   router2.use('/test22', function() {
-    //     done();
-    //   });
+      router3.use('/test33', function() {
+        done();
+      });
+      router2.use('/test22', router3);
 
-    //   router.use('/test11', router2);
+      router.use('/test11', router2);
 
-    //   router({
-    //     url: 'http://localhost/test11/test22'
-    //   }, {}, function() {});
+      router({
+        url: 'http://localhost/test11/test22/test33'
+      }, {}, function() {});
 
-
-    // });
+    });
 
 
   });
