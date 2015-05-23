@@ -2,6 +2,7 @@
 
 var express = require('express');
 var browserify = require('browserify-middleware');
+var favicon = require('serve-favicon');
 var join = require('path').join;
 var fs = require('fs');
 
@@ -9,6 +10,8 @@ var app = express();
 app.set('views', __dirname);
 app.set('view engine', 'jade');
 app.enable('strict routing');
+
+app.use(favicon(__dirname + '/favicon.ico'));
 
 var examples = fs.readdirSync(__dirname).filter(function(file) {
   return fs.statSync(__dirname + '/' + file).isDirectory();
