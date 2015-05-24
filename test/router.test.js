@@ -121,6 +121,118 @@ describe('Router', function() {
 
   });
 
+  describe('#param', function() {
+
+    it('shold run only for params in route', function(done) {
+      var spy1 = sinon.spy();
+      var spy2 = sinon.spy();
+      var router = routerFactory();
+
+      router.use('/test/:one', function(req, res, next) {
+        next();
+      });
+
+      router.param('one', function(req, res, next, param) {
+        spy1();
+        next();
+      });
+
+      router.param('two', function(req, res, next, param) {
+        spy2();
+        next();
+      })
+
+      router({
+        url: 'http://localhost/test/one'
+      }, {}, function(err) {
+        spy1.called.should.be.true;
+        spy2.called.should.be.false;
+        done(err);
+      });
+    });
+
+    it('should only call once per request', function(done) {
+      var spy1 = sinon.spy();
+      var spy2 = sinon.spy();
+      var router = routerFactory();
+
+      router.use('/test/:one', function(req, res, next) {
+        console.log('route one 1');
+        spy1();
+        next();
+      });
+
+      router.use('/test/:one', function(req, res, next) {
+        console.log('route one 2');
+        spy1();
+        next();
+      });
+
+      router.param('one', function(req, res, next, param) {
+        console.log('param one 1');
+        spy2();
+        next();
+      });
+      router.param('one', function(req, res, next, param) {
+        console.log('param one 2');
+        spy2();
+        next();
+      });
+
+      router({
+        url: 'http://localhost/test/one'
+      }, {}, function() {});
+
+      spy1.calledTwice.should.be.ok;
+      spy2.calledOnce.should.be.ok;
+      done();
+    });
+
+    it('should pass value of the parameter in param middleware', function() {
+      var router = routerFactory();
+
+      router.use('/test/:one', function(req, res, next) {
+        next();
+      });
+
+      router.param('one', function(req, res, next, param) {
+        param.should.be.equal('foo');
+        done();
+      });
+
+      router({
+        url: 'http://localhost/test/foo'
+      }, {}, function() {});
+
+    })
+
+    it('should support array of names', function(done) {
+      var router = routerFactory();
+      var spy = sinon.spy();
+      spy.withArgs('foo');
+      spy.withArgs('bar');
+
+      router.use('/test/:two/:one', function(req, res, next) {
+        next();
+      });
+
+      router.param(['one', 'two'], function(req, res, next, param) {
+        spy(param);
+        next();
+      });
+
+      router({
+        url: 'http://localhost/test/foo/bar'
+      }, {}, function() {});
+
+      spy.calledTwice.should.be.ok;
+      spy.withArgs('foo').calledOnce.should.be.ok;
+      spy.withArgs('bar').calledOnce.should.be.ok;
+      done();
+    })
+
+  });
+
   describe('error middleware', function() {
     it('should catch next(error)', function() {
       var router = routerFactory();
