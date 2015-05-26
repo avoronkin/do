@@ -19,7 +19,7 @@
     "sinon": "^1.14.1"
   },
   "dependencies": {
-    "filter-ware": "git://github.com/avoronkin/filter-ware.git",
+    "ware": "git://github.com/avoronkin/ware.git",
     "html5-history-api": "^4.2.0",
     "merge-descriptors": "^1.0.0",
     "path-to-regexp": "^1.0.3",
