@@ -3,8 +3,8 @@
 ```javascript
 'use strict';
 
-var routerFactory = require('do').Router;
-var Server = require('do').Server;
+var routerFactory = require('xpres').Router;
+var Server = require('xpres').Server;
 
 var router = routerFactory();
 

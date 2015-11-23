@@ -1,29 +1,37 @@
 {
-  "name": "do",
-  "version": "0.0.1",
-  "description": "Express.js app structure for frontend",
-  "main": "index.js",
-  "scripts": {
-    "test": "mocha",
-    "examples": "node ./examples"
-  },
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "browserify-middleware": "^5.0.2",
-    "chai": "^2.2.0",
-    "express": "^4.12.3",
-    "jade": "^1.9.2",
-    "mocha": "^2.2.4",
-    "serve-favicon": "^2.2.1",
-    "sinon": "^1.14.1"
-  },
-  "dependencies": {
-    "debug": "^2.2.0",
-    "filter-ware": "^1.0.0",
-    "html5-history-api": "^4.2.0",
-    "merge-descriptors": "^1.0.0",
-    "path-to-regexp": "^1.0.3",
-    "url-parse": "^1.0.0"
-  }
+    "name": "xpres",
+    "version": "1.0.0",
+    "description": "Router for frontend",
+    "main": "index.js",
+    "scripts": {
+        "test": "mocha",
+        "examples": "node ./examples"
+    },
+    "author": "Alexandr Voronkin <hello@elasticweb.ru>",
+    "devDependencies": {
+        "browserify-middleware": "^5.0.2",
+        "chai": "^2.2.0",
+        "express": "^4.12.3",
+        "jade": "^1.9.2",
+        "mocha": "^2.2.4",
+        "serve-favicon": "^2.2.1",
+        "sinon": "^1.14.1"
+    },
+    "dependencies": {
+        "debug": "^2.2.0",
+        "filter-ware": "^1.0.0",
+        "html5-history-api": "^4.2.0",
+        "merge-descriptors": "^1.0.0",
+        "path-to-regexp": "^1.0.3",
+        "url-parse": "^1.0.0"
+    },
+    "keywords": ["router", "navigation", "middleware", "awesome"],
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/avoronkin/xpres.git"
+      },
+    {
+        "type": "MIT",
+        "url": "http://www.opensource.org/licenses/mit-license.php"
+    }
 }
