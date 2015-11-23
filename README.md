@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/avoronkin/do.svg?branch=master)](https://travis-ci.org/avoronkin/do)
+[![Build Status](https://travis-ci.org/avoronkin/xpres.svg?branch=master)](https://travis-ci.org/avoronkin/do)
 
 ```javascript
 'use strict';
