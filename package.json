@@ -30,6 +30,9 @@
         "type": "git",
         "url": "git://github.com/avoronkin/xpres.git"
     },
+    "bugs": {
+        "url": "https://github.com/avoronkin/xpres/issues"
+    },
     "license": {
         "type": "MIT",
         "url": "http://www.opensource.org/licenses/mit-license.php"
