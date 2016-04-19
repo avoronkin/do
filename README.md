@@ -1,4 +1,8 @@
+[![NPM](https://nodei.co/npm/xpres.png)](https://nodei.co/npm/xpres/)
+
 [![Build Status](https://travis-ci.org/avoronkin/xpres.svg?branch=master)](https://travis-ci.org/avoronkin/xpres)
+[![Coverage Status](https://coveralls.io/repos/github/avoronkin/xpres/badge.svg?branch=master)](https://coveralls.io/github/avoronkin/xpres?branch=master)
+
 
 ```javascript
 'use strict';

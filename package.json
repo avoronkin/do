@@ -5,6 +5,7 @@
     "main": "index.js",
     "scripts": {
         "test": "mocha",
+        "cover": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter spec",
         "examples": "node ./examples"
     },
     "author": "Alexandr Voronkin <hello@elasticweb.ru>",
